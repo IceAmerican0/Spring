@@ -1,0 +1,71 @@
+@charset "UTF-8";
+
+body {
+	background-color: #182987;
+}
+
+.login-button {
+	background-color: #182987;
+	color: #ffffff;
+	border-radius: 10px;
+	border-width: 0px;
+	height: 35px;
+}
+
+.nav-item {
+	width: 33.333%;
+	text-align: center;
+	margin: 0 auto;
+	color: blue;
+	text-align: center;
+}
+
+.container h3 {
+	text-align: center;
+}
+
+@media screen and (min-width: 1200px) {
+	/* 데스크탑에서 사용될 스타일을 여기에 작성합니다. */
+	.container {
+		background-color: #ffffff;
+		max-width: 600px;
+		min-width: 200px;
+		margin: 0 auto;
+		padding: 5%;
+		border-radius: 30px;
+	}
+	.container-img {
+		max-width: 400px;
+		min-width: 200px;
+		margin: 50px auto 20px auto;
+	}
+	.container-img img {
+		width: 100%;
+	}
+	.form-group, .form-group input {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 1200px) {
+	/* 모바일에 사용될 스트일 시트를 여기에 작성합니다. */
+	.container {
+		background-color: #ffffff;
+		max-width: 600px;
+		min-width: 200px;
+		margin: 0 auto;
+		padding: 5%;
+		border-radius: 30px;
+	}
+	.container-img {
+		max-width: 400px;
+		min-width: 200px;
+		margin: 50px auto 20px auto;
+	}
+	.container-img img {
+		width: 100%;
+	}
+	.form-group, .form-group input {
+		width: 100%;
+	}
+}

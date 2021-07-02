@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+body {
+	background-color: #f1f1f1;
+	height: 1500px;
+}
+
+#navbar {
+	background: #182987;
+	padding: 0 30px;
+}
+
+#navbar img {
+	height: 120px;
+	margin: -10px -35px -10px 0px;
+}
+
+.navbar-dark {
+	width: 1000px;
+	margin: 0 auto;
+}
+
+.nav-item {
+	margin: 0px 0px 0px 50px;
+}

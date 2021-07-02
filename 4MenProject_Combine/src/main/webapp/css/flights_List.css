@@ -1,0 +1,85 @@
+@charset "UTF-8";
+
+body {
+	background-color: #f1f1f1;
+	height: 1500px;
+}
+
+.margin_auto_1000 {
+	width: 1200px;
+	margin: 0 auto;
+}
+
+#select {
+	margin-left: 0px;
+}
+
+.procedure {
+	background: #ffffff;
+	width: 100%;
+	margin: 15px 0 15px 0;
+}
+
+.procedure .button2 {
+	background: #182987;
+	color: #ffffff;
+	border: 0 0 0 1px;
+}
+
+
+
+.flights_Date_List {
+	padding: 0 50px;
+}
+
+.flights_Date_List .select_Date {
+	background: #182987;
+	color: #ffffff;
+	border-width: 0px;
+	height: 35px;
+	width: 100%;
+}
+
+.flights_Date_List .not_select_Date {
+	background: #ffffff;
+	border-width: 0px;
+	height: 35px;
+	width: 100%;
+}
+
+.flights_Date_List form {
+	padding: 0px;
+	margin: 0 auto;
+}
+
+.col-lg-1 {
+	padding: 0;
+}
+
+.schedule {
+	border: 1px solid;
+	border-color: #f1f1f1;
+	background-color: #ffffff;
+	text-align: center;
+	padding: 30px;
+}
+
+.tabkeoff, .landing {
+	width: 40px;
+}
+
+.coloms div {
+	font-size: 25px;
+}
+
+.flite_schedule {
+	text-align: center;
+}
+
+.input-submit {
+	background: #182987;
+	color: #ffffff;
+	height: 40px;
+	width: 200px;
+	border: 0px;
+}
