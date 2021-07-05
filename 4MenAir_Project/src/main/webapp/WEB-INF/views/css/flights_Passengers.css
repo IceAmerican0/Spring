@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+body {
+	background-color: #f1f1f1;
+	height: 1500px;
+}
+
+.margin_auto_1000 {
+	width: 1000px;
+	margin: 0 auto;
+}
+
+#select {
+	margin-left: 0px;
+}
+
+.procedure {
+	background: #ffffff;
+	width: 100%;
+	margin: 15px 0 15px 0;
+}
+
+.procedure .button3 {
+	background: #182987;
+	color: #ffffff;
+	border: 0 0 0 1px;
+}
+
+
+.middleTitle{
+	font-size:40px;	
+	font-weight: bold;
+	margin: 20px 0;
+}
+.userInfo, .flightsInfo{
+	background-color: #ffffff;
+}
+.form-control{
+	border-width: 0px;
+}

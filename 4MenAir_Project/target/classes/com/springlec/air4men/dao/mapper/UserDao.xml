@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE mapper
+
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+    <mapper namespace="com.springlec.air4men.dao.UserDao">
+    	<insert id="RegisterAction" >
+    		insert into userinfo (userId,userPw,userName,userTel,userEmail,userAdd,userCRDate,userBirthday) values (#{param1},#{param2},#{param3},#{param4},#{param5},#{param6},now(),#{param7})
+    	</insert>
+    	
+    	<select id="IdfindAction" resultType="com.springlec.air4men.dto.UserDto">
+    		select userId from userinfo where userName=#{param1} and userTel=#{param2} and userEmail=#{param3}
+    	</select>
+    	
+    	<select id="PwfindAction" resultType="com.springlec.air4men.dto.UserDto">
+    		select userPw from userinfo where userId=#{param1} and userTel=#{param2} and userEmail=#{param3}
+    	</select>
+    	
+    	<select id="LoginAction" resultType="com.springlec.air4men.dto.UserDto">
+			select userId,userPw,userName,userTel,userEmail,userAdd,userDLDate,userBirthday from UserInfo where UserId=#{param1}
+    	</select>
+    	
+    	<select id="LoginCheck">
+    		select userPw from userinfo where userId=#{param1}
+    	</select>
+    
+    </mapper>

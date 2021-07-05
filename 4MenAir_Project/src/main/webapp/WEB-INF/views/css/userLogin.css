@@ -1,0 +1,97 @@
+@charset "UTF-8";
+
+body {
+	background-color: #182987;
+	text-align: center;
+}
+
+input {
+	text-align: center;
+	height: 40px;
+}
+
+label {
+	width: 70px;
+	text-align: right;
+}
+
+.container-img {
+	max-width: 400px;
+	min-width: 200px;
+	margin: 50px auto 20px auto;
+}
+
+.container-img img {
+	width: 100%;
+}
+.custom-select {
+	width: 50%;
+}
+
+.container h3 {
+	text-align: center;
+}
+
+.calendar {
+	width: 100%;
+}
+
+.custom-calendar {
+	display: inline-block;
+	width: 50%;
+	height: calc(1.5em + .75rem + 2px);
+	padding: .375rem 1.75rem .375rem .75rem;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+	color: #495057;
+	vertical-align: middle;
+	border: 1px solid #ced4da;
+	border-radius: .25rem;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	text-align: left;
+}
+
+.container {
+	background-color: #ffffff;
+	max-width: 600px;
+	min-width: 200px;
+	margin: 0 auto;
+	padding: 5%;
+	border-radius: 30px;
+}
+
+
+.form-group .flights_search {
+	width: 70%;
+	border-width: 0px;
+	background-color: #182987;
+	color: #ffffff;
+	border-radius: .25rem;
+}
+.form-group .logout {
+	border-width: 0px;
+	background-color: #ffffff;
+	color: #000000;
+	border-radius: .25rem;
+}
+
+.menuButton {
+	margin: 0 auto;
+}
+
+.menuButton input {
+	background-color: #ffb808;
+	border-radius: .25rem;
+	border-width: 0px;
+	margin: 0 auto;
+	width: 24%;
+}
+/* __________________________________________________________ */
+@media screen and (min-width: 1200px) { /* 데스크탑에서 사용될 스타일을 여기에 작성합니다. */
+}
+
+@media screen and (max-width: 1200px) { /* 모바일에 사용될 스트일 시트를 여기에 작성합니다. */
+}

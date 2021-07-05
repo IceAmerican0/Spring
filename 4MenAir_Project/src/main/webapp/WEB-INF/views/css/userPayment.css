@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+.userInfo-top {
+	font-size: 35px;
+	padding: 30px;
+	font-weight: bold;
+}
+
+.toMain {
+	text-align: right;
+	font-weight: bold;
+}
+
+.toMain a {
+	color: black;
+}
+.toMain input {
+	color: black;
+	border-width: 0px;
+}
+
+.list{
+	text-align: center;
+}
