@@ -24,7 +24,7 @@ public class DeleteClientViewCommand implements BCommand {
 		AdminDao dao=sqlSession.getMapper(AdminDao.class);
 		AdminUserDto dto = dao.oneSelectDeleteMember(userId);
 		
-		request.setAttribute("MemberInfo", dto);
+		model.addAttribute("MemberInfo", dto);
 	}
 
 }

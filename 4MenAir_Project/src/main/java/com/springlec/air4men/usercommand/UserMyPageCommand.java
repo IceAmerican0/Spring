@@ -24,8 +24,8 @@ public class UserMyPageCommand implements BCommand {
 		UserDao userDao=sqlSession.getMapper(UserDao.class);
 		UserDto userinfo=userDao.LoginAction(userId);
 		
-		request.setAttribute("userInfo", userinfo);
-		request.setAttribute("userId", userId);
+		model.addAttribute("userInfo", userinfo);
+		model.addAttribute("userId", userId);
 		
 		
 	}

@@ -22,7 +22,7 @@ public class DeleteClientListCommand implements BCommand {
 		
 		AdminDao adminDao=sqlSession.getMapper(AdminDao.class);
 		ArrayList<AdminUserDto> dtos = adminDao.Deletelist();
-		request.setAttribute("list", dtos);
+		model.addAttribute("list", dtos);
 	}
 
 }

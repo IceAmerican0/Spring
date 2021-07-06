@@ -24,7 +24,7 @@ public class UserQnaListCommand implements BCommand {
 		
 		BoardDao dao=sqlSession.getMapper(BoardDao.class);
 		ArrayList<BoardDto> dtos=dao.list(userId);
-		request.setAttribute("list", dtos);
+		model.addAttribute("list", dtos);
 
 	}
 

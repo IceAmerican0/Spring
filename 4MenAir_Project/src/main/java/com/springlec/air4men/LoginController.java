@@ -38,6 +38,7 @@ public class LoginController {
 	
 	@RequestMapping("/userIdfind")// 아이디찾기 후 결과화면으로
 	public String userIdfind(HttpServletRequest request,Model model) {
+		model.addAttribute("request",request);
 		command=new UserIdfindCommand();
 		command.execute(sqlSession,model);
 		return "Login/userIdfindResult";
@@ -50,6 +51,7 @@ public class LoginController {
 	
 	@RequestMapping("/userPwfind")// 비밀번호찾기 후 결과화면으로
 	public String userPwfind(HttpServletRequest request,Model model) {
+		model.addAttribute("request",request);
 		command=new UserPwfindCommand();
 		command.execute(sqlSession,model);
 		return "Login/userPwfindResult";
@@ -57,6 +59,7 @@ public class LoginController {
 	
 	@RequestMapping("/userRegister")// 회원가입 후 로그인화면으로
 	public String userRegister(HttpServletRequest request,Model model) {
+		model.addAttribute("request",request);
 		command=new UserRegisterCommand();
 		command.execute(sqlSession,model);
 		return "Login/userLogin";
@@ -64,6 +67,7 @@ public class LoginController {
 	
 	@RequestMapping("/userLogin")// 로그인 후 메인화면으로
 	public String userLogin(HttpServletRequest request,Model model) {
+		model.addAttribute("request",request);
 		command=new UserLoginCommand();
 		command.execute(sqlSession,model);
 		return "main";

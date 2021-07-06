@@ -23,7 +23,7 @@ public class Flights_Passengers_Command implements BCommand {
 		Flights_List_dao dao=sqlSession.getMapper(Flights_List_dao.class);
 		Flights_List_Dto flights_passengers = dao.Flights_passengers(request.getParameter("flights_select"));
 		Flights_List_Dto user_Info = dao.user_Info(request.getParameter("userId"));
-		request.setAttribute("flights_passengers", flights_passengers);
-		request.setAttribute("user_Info", user_Info);
+		model.addAttribute("flights_passengers", flights_passengers);
+		model.addAttribute("user_Info", user_Info);
 	}
 }

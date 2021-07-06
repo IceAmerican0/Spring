@@ -8,7 +8,9 @@
     <mapper namespace="com.springlec.air4men.dao.AdminDao">
     
     	<select id="AdminLogin" resultType="com.springlec.air4men.dto.AdminDto">
-    		select AdminId, AdminPw, AdminTel, AdminEmail from admininfo where AdminId = #{param1} and AdminPw = #{param2}";
+    		select AdminId, AdminPw, AdminTel, AdminEmail 
+    		from admininfo 
+    		where AdminId = #{param1} and AdminPw = #{param2}";
     	</select>
     	
     	<select id="loginCheck" resultType="com.springlec.air4men.dto.AdminDto">
@@ -16,7 +18,8 @@
     	</select>
     	
     	<select id="list" resultType="com.springlec.air4men.dto.AdminUserDto">
-    		select UserId, UserPw, UserName, UserTel, UserEmail, UserAdd, UserCRDate, UserDLDate from userinfo where UserDLDate IS NULL";
+    		select UserId, UserPw, UserName, UserTel, UserEmail, UserAdd, UserCRDate, UserDLDate 
+    		from userinfo where UserDLDate IS NULL";
     	</select>
     	
     	<select id="oneSelectMember" resultType="com.springlec.air4men.dto.AdminUserDto">
@@ -28,7 +31,8 @@
     	</update>
     	
     	<select id="Deletelist" resultType="com.springlec.air4men.dto.AdminUserDto">
-    		select UserId, UserPw, UserName, UserTel, UserEmail, UserAdd, UserCRDate, UserDLDate from userinfo where UserDLDate IS NOT NULL
+    		select UserId, UserPw, UserName, UserTel, UserEmail, UserAdd, UserCRDate, UserDLDate from userinfo 
+    		where UserDLDate IS NOT NULL
     	</select>
     	
     	<select id="oneSelectDeleteMember" resultType="com.springlec.air4men.dto.AdminUserDto">
@@ -40,15 +44,24 @@
     	</update>
     	
     	<select id="Qnalist" resultType="com.springlec.air4men.dto.AdminQnaDto">
-    		select q.QnA_Code, b.Board_Num, q.QnAReply, q.QnAAdminId,b.Board_Name, b.Board_Contents, b.Board_Create_Date, q.QnaRepDate from qna_answer q, bulletin_board b where b.board_num=q.board_num and b.board_category='qna' and b.board_delete_date is null group by b.board_num order by board_create_date desc
+    		select q.QnA_Code, b.Board_Num, q.QnAReply, q.QnAAdminId,b.Board_Name, 
+    			b.Board_Contents, b.Board_Create_Date, q.QnaRepDate 
+    		from qna_answer q, bulletin_board b 
+    		where b.board_num=q.board_num and b.board_category='qna' and b.board_delete_date is null 
+    		group by b.board_num 
+    		order by board_create_date desc
     	</select>
     	
     	<select id="oneSelectQnaMember" resultType="com.springlec.air4men.dto.AdminQnaDto">
-    		select q.QnA_Code, b.Board_Num, q.QnAReply, q.QnAAdminId, b.Board_Name, b.Board_Contents, b.Board_Create_Date, q.QnaRepDate from qna_answer q, bulletin_board b where b.board_num = #{param1} and b.board_num=q.board_num
+    		select q.QnA_Code, b.Board_Num, q.QnAReply, q.QnAAdminId, b.Board_Name, 
+    			b.Board_Contents, b.Board_Create_Date, q.QnaRepDate 
+    		from qna_answer q, bulletin_board b 
+    		where b.board_num = #{param1} and b.board_num=q.board_num
     	</select>
     	
     	<update id="QnaReply">
-    		update qna_answer set qnareply=#{param1}, qnaadminid='관리자', qnarepdate=now() where board_num=#{param2}
+    		update qna_answer set qnareply=#{param1}, qnaadminid='관리자', qnarepdate=now() 
+    		where board_num=#{param2}
     	</update>
     	
     </mapper>

@@ -22,7 +22,7 @@ public class AdminClientListCommand implements BCommand {
 
 		AdminDao adminDao=sqlSession.getMapper(AdminDao.class);
 		ArrayList<AdminUserDto> dtos = adminDao.list();
-		request.setAttribute("list", dtos);
+		model.addAttribute("list", dtos);
 		
 	}
 

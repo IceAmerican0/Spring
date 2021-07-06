@@ -8,19 +8,28 @@
     <mapper namespace="com.springlec.air4men.dao.ReservationDao">
     
     	<select id="list" resultType="com.springlec.air4men.dto.ReservationDto">
-    		select r.reservation_code, f.departures, f.arrivals, f.flights_code, f.departures_date, f.arrivals_date, r.reservation_create_date, r.reservation_cancel_date from reservation r,flights f where r.userinfo_userid=#{param1} and r.flights_flights_code=f.flights_code order by r.reservation_create_date desc
+    		select r.reservation_code, f.departures, f.arrivals, f.flights_code, f.departures_date, 
+    			f.arrivals_date, r.reservation_create_date, r.reservation_cancel_date 
+    			from reservation r,flights f 
+    			where r.userinfo_userid=#{param1} and r.flights_flights_code=f.flights_code 
+    			order by r.reservation_create_date desc
     	</select>
     
     	<insert id="userPaymentAction">
-    		insert into reservation (userinfo_userid, flights_flights_code, reservation_cardnumber, reservation_create_date) values (#{param1},#{param2},#{param3},now())
+    		insert into reservation (userinfo_userid, flights_flights_code, reservation_cardnumber, reservation_create_date) 
+    		values (#{param1},#{param2},#{param3},now())
     	</insert>
     	
     	<select id="userPaymentInfo" resultType="com.springlec.air4men.dto.ReservationDto">
-    		select r.reservation_code,f.departures, f.arrivals, f.departures_date, f.payments, r.reservation_cardnumber, f.arrivals_date, r.reservation_create_date, r.reservation_cancel_date, r.flights_flights_code from reservation r,flights f where f.flights_code=#{param1} and f.flights_code=r.flights_flights_code
+    		select r.reservation_code,f.departures, f.arrivals, f.departures_date, f.payments, 
+    		r.reservation_cardnumber, f.arrivals_date, r.reservation_create_date, r.reservation_cancel_date, r.flights_flights_code 
+    		from reservation r,flights f 
+    		where f.flights_code=#{param1} and f.flights_code=r.flights_flights_code
     	</select>
     
     	<update id="userPayCancelAction">
-    		update reservation set reservation_cancel_date=now() where flights_flights_code=#{param1}
+    		update reservation set reservation_cancel_date=now() 
+    		where flights_flights_code=#{param1}
     	</update>
     
     </mapper>

@@ -23,7 +23,7 @@ public class UserNoticeListCommand implements BCommand {
 		
 		NoticeDao dao=sqlSession.getMapper(NoticeDao.class);
 		ArrayList<NoticeDto> dtos=dao.list();
-		request.setAttribute("list", dtos);
+		model.addAttribute("list", dtos);
 	}
 
 }

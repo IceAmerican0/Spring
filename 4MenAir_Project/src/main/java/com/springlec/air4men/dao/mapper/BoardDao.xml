@@ -8,27 +8,39 @@
     <mapper namespace="com.springlec.air4men.dao.BoardDao">
     
     	<select id="list" resultType="com.springlec.air4men.dto.BoardDto">
-    		select b.board_num, b.board_name, b.board_create_date, q.qnarepdate from qna_answer q, bulletin_board b where b.board_num=q.board_num and b.board_user_name=#{param1} and b.board_delete_date is null order by board_create_date desc
+    		select b.board_num, b.board_name, b.board_create_date, q.qnarepdate 
+    		from qna_answer q, bulletin_board b 
+    		where b.board_num=q.board_num and b.board_user_name=#{param1} and b.board_delete_date is null 
+    		order by board_create_date desc
     	</select>
     
     	<insert id="userQnaWriteAction">
-    		insert into bulletin_board (board_category,board_user_name,board_name,board_contents,board_create_date) values ('qna',#{param1},#{param2},#{param3},now())
+    		insert into bulletin_board (board_category,board_user_name,board_name,board_contents,board_create_date) 
+    			values ('qna',#{param1},#{param2},#{param3},now())
     	</insert>
     	
     	<insert id="userQnaWriteAction2">
-    		insert into qna_answer (qna_code,board_num,qnareply,qnaadminid,qnarepdate) select b.board_num, b.board_num,null,null,null from bulletin_board b where b.board_user_name=#{param1} and b.board_name=#{param2} and board_contents=#{param3}
+    		insert into qna_answer (qna_code,board_num,qnareply,qnaadminid,qnarepdate) 
+    		select b.board_num, b.board_num,null,null,null 
+    		from bulletin_board b 
+    		where b.board_user_name=#{param1} and b.board_name=#{param2} and board_contents=#{param3}
     	</insert>
     
     	<select id="userQnaSelectedAction" resultType="com.springlec.air4men.dto.BoardDto">
-    		select b.board_num, b.board_name, b.board_contents, q.qna_code, q.qnaadminid, q.qnareply, q.qnarepdate from qna_answer q, bulletin_board b where b.board_num=#{param1} and b.board_num=q.board_num
+    		select b.board_num, b.board_name, b.board_contents, q.qna_code, 
+    			q.qnaadminid, q.qnareply, q.qnarepdate 
+    		from qna_answer q, bulletin_board b 
+    		where b.board_num=#{param1} and b.board_num=q.board_num
     	</select>
     
     	<update id="userQnaModifyAction">
-    		update bulletin_board set board_name=#{param1}, board_contents=#{param2} where board_num=#{param3}";
+    		update bulletin_board set board_name=#{param1}, board_contents=#{param2} 
+    		where board_num=#{param3}";
     	</update>
     	
     	<update id="userQnaDeleteAction">
-    		update bulletin_board set board_delete_date=now() where board_num=#{param1}
+    		update bulletin_board set board_delete_date=now() 
+    		where board_num=#{param1}
     	</update>
     
     </mapper>

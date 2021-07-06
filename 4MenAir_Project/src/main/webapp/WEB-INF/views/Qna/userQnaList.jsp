@@ -53,5 +53,5 @@
             <input type="submit" value="문의하기">
         </form>
     </div>
-s</body>
+</body>
 </html>

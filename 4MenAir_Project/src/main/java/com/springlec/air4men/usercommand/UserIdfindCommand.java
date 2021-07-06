@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 
 import com.springlec.air4men.command.BCommand;
 import com.springlec.air4men.dao.UserDao;
+import com.springlec.air4men.dto.UserDto;
 
 public class UserIdfindCommand implements BCommand {
 
@@ -24,11 +25,11 @@ public class UserIdfindCommand implements BCommand {
 		String userEmail=userEmail1+userEmail2;
 		String userTel=request.getParameter("userTel");
 		
-		
 		UserDao userDao=sqlSession.getMapper(UserDao.class);
-		String userId=userDao.IdfindAction(userName, userTel, userEmail);
-		request.setAttribute("userName", userName);
-		request.setAttribute("FinduserId", userId);
+		UserDto dto=userDao.IdfindAction(userName, userTel, userEmail);
+		String userId=dto.getUserId();
+		model.addAttribute("userName", userName);
+		model.addAttribute("FinduserId", userId);
 	}
 
 }

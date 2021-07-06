@@ -25,9 +25,9 @@ public class UserQnaSelectedCommand implements BCommand {
 		BoardDao dao=sqlSession.getMapper(BoardDao.class);
 		BoardDto dto=dao.userQnaSelectedAction(board_num);
 
-		request.setAttribute("board", dto);
+		model.addAttribute("board", dto);
 		if(dto.getQna_reply()!=null)
-			request.setAttribute("qnareply", dto.getQna_reply());
+			model.addAttribute("qnareply", dto.getQna_reply());
 	}
 
 }

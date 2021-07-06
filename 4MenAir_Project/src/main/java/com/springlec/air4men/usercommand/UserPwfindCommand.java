@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 
 import com.springlec.air4men.command.BCommand;
 import com.springlec.air4men.dao.UserDao;
+import com.springlec.air4men.dto.UserDto;
 
 public class UserPwfindCommand implements BCommand {
 
@@ -26,9 +27,10 @@ public class UserPwfindCommand implements BCommand {
 		
 		
 		UserDao userDao=sqlSession.getMapper(UserDao.class);
-		String userPw=userDao.PwfindAction(userId, userTel, userEmail);
-		request.setAttribute("userId", userId);
-		request.setAttribute("FinduserPw", userPw);
+		UserDto dto=userDao.PwfindAction(userId, userTel, userEmail);
+		String userPw=dto.getUserPw();
+		model.addAttribute("userId", userId);
+		model.addAttribute("FinduserPw", userPw);
 
 	}
 

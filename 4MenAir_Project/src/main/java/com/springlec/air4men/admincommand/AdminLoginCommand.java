@@ -25,7 +25,7 @@ public class AdminLoginCommand implements BCommand {
 		AdminDao adminDao=sqlSession.getMapper(AdminDao.class);
 		AdminDto adminDto = adminDao.AdminLogin(adminId, adminPw);
 		
-		request.setAttribute("adminInfo", adminDto);
+		model.addAttribute("adminInfo", adminDto);
 
 	}
 

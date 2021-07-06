@@ -22,7 +22,7 @@ public class AdminNoticeListCommand implements BCommand {
 		
 		AdminNoticeDao dao=sqlSession.getMapper(AdminNoticeDao.class);
 		ArrayList<AdminNoticeDto> dtos=dao.list();
-		request.setAttribute("list", dtos);
+		model.addAttribute("list", dtos);
 	}
 
 }

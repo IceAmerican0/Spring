@@ -55,7 +55,7 @@
             </div>
             <div class="form-group row mt-5">
                 <div class="col-xl-12">
-                    <input type="submit" value="찾기" onclick="inputCheck()">
+                    <input type="submit" value="찾기">
                 </div>
             </div>
             <div class="form-group">

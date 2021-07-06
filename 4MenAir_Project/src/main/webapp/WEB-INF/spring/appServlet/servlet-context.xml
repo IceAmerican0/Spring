@@ -13,12 +13,28 @@
 	<annotation-driven />
 
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
+	
+	<resources mapping="/css/**" location="/WEB-INF/views/css/, classpath=/WEB-INF/views/css/"/>
+	
+	<resources mapping="/images/**"  location="/WEB-INF/views/images/, classpath=/WEB-INF/views/images/" />
+	
+	<resources mapping="/Login/Login_Js/**" location="/WEB-INF/views/Login/Login_Js/, classpath=/WEB-INF/views/Login/Login_Js/"  />
+	
+	<resources location="/WEB-INF/views/Login/, classpath=/WEB-INF/views/Login/" mapping="/Login/**" />
+	<resources location="/WEB-INF/views/admincss/, classpath=/WEB-INF/views/admincss/" mapping="/admincss/**" />
+	<resources location="/WEB-INF/views/admininc/, classpath=/WEB-INF/views/admininc/" mapping="/admininc/**" />
+	<resources location="/WEB-INF/views/adminjs/, classpath=/WEB-INF/views/adminjs/" mapping="/adminjs/**" />
+	<resources location="/WEB-INF/views/adminjsp/, classpath=/WEB-INF/views/adminjsp/" mapping="/adminjsp/**" />
+	<resources location="/WEB-INF/views/flights_List/, classpath=/WEB-INF/views/flights_List/" mapping="/flights_List/**" />
+	<resources location="/WEB-INF/views/Notice/, classpath=/WEB-INF/views/Notice/" mapping="/Notice/**" />
+	<resources location="/WEB-INF/views/Qna/, classpath=/WEB-INF/views/Qna/" mapping="/Qna/**" />
+	<resources location="/WEB-INF/views/Reservation/, classpath=/WEB-INF/views/Reservation/" mapping="/Reservation/**" />
+	<resources location="/WEB-INF/views/, classpath=/WEB-INF/views/" mapping="/**" />
+	
 	<resources mapping="/resources/**" location="/resources/" />
-	<resources location="/images/, classpath=/images/" mapping="/images/**" />
+	
 
-	<resources location="/css/, classpath=/css/" mapping="/css/**" />
 
-	<resources location="/script/, classpath=/script/" mapping="/script/**" />
 
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
@@ -27,7 +43,7 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
-	<context:component-scan base-package="com.springlec.air4men" /> <!-- .4menair -->
+	<context:component-scan base-package="com.springlec.*" /> <!-- .4menair -->
 	
 	<beans:bean name="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<beans:property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>

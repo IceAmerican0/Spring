@@ -24,7 +24,7 @@ public class UserPaymentInfoCommand implements BCommand {
 		ReservationDao dao=sqlSession.getMapper(ReservationDao.class);
 		ReservationDto dto=dao.userPaymentInfo(flight);
 		
-		request.setAttribute("paymentInfo", dto);
+		model.addAttribute("paymentInfo", dto);
 	}
 
 }

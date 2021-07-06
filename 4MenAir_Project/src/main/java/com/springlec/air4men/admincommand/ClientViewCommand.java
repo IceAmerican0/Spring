@@ -23,7 +23,7 @@ public class ClientViewCommand implements BCommand {
 		AdminDao dao=sqlSession.getMapper(AdminDao.class);
 		AdminUserDto dto = dao.oneSelectMember(userId);
 		
-		request.setAttribute("MemberInfo", dto);
+		model.addAttribute("MemberInfo", dto);
 	}
 
 }

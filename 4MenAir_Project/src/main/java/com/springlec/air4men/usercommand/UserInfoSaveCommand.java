@@ -23,7 +23,7 @@ public class UserInfoSaveCommand implements BCommand {
 		
 		UserDao userDao=sqlSession.getMapper(UserDao.class);
 		UserDto userDto=userDao.LoginAction(userId);
-		request.setAttribute("userInfo", userDto);
+		model.addAttribute("userInfo", userDto);
 
 	}
 

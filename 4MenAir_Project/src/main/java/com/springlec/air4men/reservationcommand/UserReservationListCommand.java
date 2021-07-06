@@ -24,7 +24,7 @@ public class UserReservationListCommand implements BCommand {
 		
 		ReservationDao dao=sqlSession.getMapper(ReservationDao.class);
 		ArrayList<ReservationDto> dtos=dao.list(userId);
-		request.setAttribute("list", dtos);
+		model.addAttribute("list", dtos);
 	}
 
 }

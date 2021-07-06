@@ -24,7 +24,7 @@ public class AdminQnAViewCommand implements BCommand {
 		AdminDao dao=sqlSession.getMapper(AdminDao.class);
 		AdminQnaDto dto = dao.oneSelectQnaMember(board_num);
 		
-		request.setAttribute("QnaInfo", dto);
+		model.addAttribute("QnaInfo", dto);
 		
 	}
 

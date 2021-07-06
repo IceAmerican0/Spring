@@ -23,7 +23,7 @@ public class AdminNoticeSelectedCommand implements BCommand {
 		
 		AdminNoticeDao dao=sqlSession.getMapper(AdminNoticeDao.class);
 		AdminNoticeDto dto=dao.AdminNoticeSelectedAction(board_num);
-		request.setAttribute("notice", dto);
+		model.addAttribute("notice", dto);
 	}
 
 }

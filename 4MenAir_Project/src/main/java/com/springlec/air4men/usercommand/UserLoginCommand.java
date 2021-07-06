@@ -22,16 +22,13 @@ public class UserLoginCommand implements BCommand {
 		String userId=request.getParameter("userId");
 		String userPw=request.getParameter("userPw");
 		
-		UserDao userDao=sqlSession.getMapper(UserDao.class);
-		int x=userDao.LoginCheck(userId, userPw);
+		System.out.println("userId : "+userId+"\n userPw : "+userPw);
 		
-		if(x==1) {
-			model.addAttribute("userId", userId);
-		}else if(x==0) {
-			model.addAttribute("msg", x);
-		}else {
-			model.addAttribute("msg",x);
-		}
+		UserDao userDao=sqlSession.getMapper(UserDao.class);
+		UserDto dto=userDao.LoginCheck(userId, userPw);
+		
+		if(dto.getUserId().equals(userId)&&dto.getUserPw().equals(userPw))
+			model.addAttribute("userId",userId);
 
 	}
 

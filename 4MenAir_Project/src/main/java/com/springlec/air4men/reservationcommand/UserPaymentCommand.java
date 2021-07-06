@@ -32,16 +32,16 @@ public class UserPaymentCommand implements BCommand {
 		Flights_List_dao dao=sqlSession.getMapper(Flights_List_dao.class);
 		Flights_List_Dto flights_passengers = dao.Flights_passengers(flight_code);
 		Flights_List_Dto user_Info = dao.user_Info(userId);
-		request.setAttribute("flights_passengers", flights_passengers);
+		model.addAttribute("flights_passengers", flights_passengers);
 		
-		request.setAttribute("payments", flights_passengers.getSelect_payments());
+		model.addAttribute("payments", flights_passengers.getSelect_payments());
 		
-		request.setAttribute("user_Info", user_Info);
+		model.addAttribute("user_Info", user_Info);
 		
-		request.setAttribute("userName", user_Info.getUserName());
-		request.setAttribute("userEmail", user_Info.getUserEmail());
-		request.setAttribute("userAdd", user_Info.getUserAdd());
-		request.setAttribute("userTel", user_Info.getUserTel());
+		model.addAttribute("userName", user_Info.getUserName());
+		model.addAttribute("userEmail", user_Info.getUserEmail());
+		model.addAttribute("userAdd", user_Info.getUserAdd());
+		model.addAttribute("userTel", user_Info.getUserTel());
 	}
 
 }

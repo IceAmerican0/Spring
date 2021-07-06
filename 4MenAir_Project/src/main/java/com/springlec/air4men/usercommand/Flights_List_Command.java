@@ -31,6 +31,6 @@ public class Flights_List_Command implements BCommand {
 		
 		Flights_List_dao dao=sqlSession.getMapper(Flights_List_dao.class);
 		ArrayList<Flights_List_Dto> arrayList = dao.Flights_List(date_value);
-		request.setAttribute("flights_List", arrayList);
+		model.addAttribute("flights_List", arrayList);
 	}
 }

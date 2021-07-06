@@ -8,23 +8,31 @@
     <mapper namespace="com.springlec.air4men.dao.NoticeDao">
     	
     	<select id="list" resultType="com.springlec.air4men.dto.NoticeDto">
-    		select board_num, board_name, board_contents, board_create_date from bulletin_board where board_category='notice' and board_delete_date is null order by board_create_date desc
+    		select board_num, board_name, board_contents, board_create_date 
+    		from bulletin_board 
+    		where board_category='notice' and board_delete_date is null 
+    		order by board_create_date desc
     	</select>
     	
     	<insert id="AdminNoticeWriteAction">
-    		insert into bulletin_board (board_category,board_user_name,board_name,board_contents,board_create_date) values ('notice','관리자',#{param1},#{param2},now())
+    		insert into bulletin_board (board_category,board_user_name,board_name,board_contents,board_create_date) 
+    			values ('notice','관리자',#{param1},#{param2},now())
     	</insert>
     	
     	<select id="AdminNoticeSelectedAction" resultType="com.springlec.air4men.dto.NoticeDto">
-    		select board_num, board_name, board_contents,board_create_date from bulletin_board where board_num=#{param1}
+    		select board_num, board_name, board_contents,board_create_date 
+    		from bulletin_board 
+    		where board_num=#{param1}
     	</select>
     	
     	<update id="AdminNoticeModifyAction">
-    		update bulletin_board set board_name=#{param1}, board_contents=#{param2}, board_create_date=now() where board_num=#{param3}
+    		update bulletin_board set board_name=#{param1}, board_contents=#{param2}, board_create_date=now() 
+    		where board_num=#{param3}
     	</update>
     	
     	<update id="AdminNoticeDeleteAction">
-    		update bulletin_board set board_delete_date=now() where board_num=#{param1}
+    		update bulletin_board set board_delete_date=now() 
+    		where board_num=#{param1}
     	</update>
     	
     </mapper>

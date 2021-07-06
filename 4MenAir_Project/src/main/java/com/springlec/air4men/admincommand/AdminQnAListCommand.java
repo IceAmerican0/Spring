@@ -22,7 +22,7 @@ public class AdminQnAListCommand implements BCommand {
 		
 		AdminDao adminDao=sqlSession.getMapper(AdminDao.class);
 		ArrayList<AdminQnaDto> dtos = adminDao.Qnalist();
-		request.setAttribute("list", dtos);
+		model.addAttribute("list", dtos);
 	}
 
 }

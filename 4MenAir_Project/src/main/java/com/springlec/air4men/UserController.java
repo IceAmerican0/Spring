@@ -36,7 +36,9 @@ public class UserController {
 	
 	@RequestMapping("/user_myPage_view")// 마이페이지 화면
 	public String user_myPage_view(HttpServletRequest request,Model model) {
+		model.addAttribute("request",request);
 		command=new UserMyPageCommand();
+		command.execute(sqlSession, model);
 		return "user_myPage";
 	}
 	
@@ -48,6 +50,7 @@ public class UserController {
 	
 	@RequestMapping("/userPaymentInfo_view")// 결제정보 화면
 	public String userPaymentInfo_view(HttpServletRequest request,Model model) {
+		model.addAttribute("request",request);
 		command=new UserPaymentInfoCommand();
 		command.execute(sqlSession,model);
 		return "Reservation/userPaymentInfo";
@@ -55,6 +58,7 @@ public class UserController {
 	
 	@RequestMapping("/userPayment_view")// 결제하기 화면
 	public String userPayment_view(HttpServletRequest request,Model model) {
+		model.addAttribute("request",request);
 		command=new UserPaymentCommand();
 		command.execute(sqlSession,model);
 		return "Reservation/userPayment";
@@ -62,6 +66,7 @@ public class UserController {
 	
 	@RequestMapping("/userQnaList_view")// Q&A 리스트 화면
 	public String userQnaList_view(HttpServletRequest request,Model model) {
+		model.addAttribute("request",request);
 		command=new UserQnaListCommand();
 		command.execute(sqlSession,model);
 		return "Qna/userQnaList";
@@ -74,6 +79,7 @@ public class UserController {
 	
 	@RequestMapping("/userQna_view")// 선택한 Q&A 화면
 	public String userQna_view(HttpServletRequest request,Model model) {
+		model.addAttribute("request",request);
 		command=new UserQnaSelectedCommand();
 		command.execute(sqlSession,model);
 		return "Qna/userQna";
@@ -81,6 +87,7 @@ public class UserController {
 	
 	@RequestMapping("/Notice_List")// 공지사항 리스트 화면
 	public String Notice_List(HttpServletRequest request,Model model) {
+		model.addAttribute("request",request);
 		command=new UserNoticeListCommand();
 		command.execute(sqlSession,model);
 		return "Notice/NoticeList";
@@ -88,6 +95,7 @@ public class UserController {
 	
 	@RequestMapping("/Notice_Selected")// 선택한 공지사항 화면
 	public String Notice_Selected(HttpServletRequest request,Model model) {
+		model.addAttribute("request",request);
 		command=new UserNoticeSelectedCommand();
 		command.execute(sqlSession,model);
 		return "Notice/NoticeSelected";
@@ -95,6 +103,7 @@ public class UserController {
 	
 	@RequestMapping("/userQnaModify")// Q&A 수정 후 리스트로
 	public String userQnaModify(HttpServletRequest request,Model model) {
+		model.addAttribute("request",request);
 		command=new UserQnaModifyCommand();
 		command.execute(sqlSession,model);
 		return "redirect:Qna/userQnaList";
@@ -102,6 +111,7 @@ public class UserController {
 	
 	@RequestMapping("/userQnaDelete")// Q&A 삭제 후 리스트로
 	public String userQnaDelete(HttpServletRequest request,Model model) {
+		model.addAttribute("request",request);
 		command=new UserQnaDeleteCommand();
 		command.execute(sqlSession,model);
 		return "redirect:Qna/userQnaList";
@@ -109,6 +119,7 @@ public class UserController {
 	
 	@RequestMapping("/userQnaWrite")// Q&A 작성 후 리스트로
 	public String userQnaWrite(HttpServletRequest request,Model model) {
+		model.addAttribute("request",request);
 		command=new UserQnaWriteCommand();
 		command.execute(sqlSession,model);
 		return "redirect:Qna/userQnaList";
@@ -116,6 +127,7 @@ public class UserController {
 	
 	@RequestMapping("/userPayment")// 결제 후 결제 정보 화면으로
 	public String userPayment(HttpServletRequest request,Model model) {
+		model.addAttribute("request",request);
 		command=new UserPaymentActionCommand();
 		command.execute(sqlSession,model);
 		return "redirect:Reservation/userPaymentInfo";
@@ -123,6 +135,7 @@ public class UserController {
 	
 	@RequestMapping("/userPayCancel")// 결제취소 후 결제하기 화면으로
 	public String userPayCancel(HttpServletRequest request,Model model) {
+		model.addAttribute("request",request);
 		command=new UserPayCancelCommand();
 		command.execute(sqlSession,model);
 		return "redirect:Reservation/userPayment";
@@ -130,6 +143,7 @@ public class UserController {
 	
 	@RequestMapping("/userPayCancel2")// 결제취소 후 예약 내역으로
 	public String userPayCancel2(HttpServletRequest request,Model model) {
+		model.addAttribute("request",request);
 		command=new UserPayCancelCommand();
 		command.execute(sqlSession,model);
 		return "redirect:Reservation/userReservationList";
@@ -142,6 +156,7 @@ public class UserController {
 	
 	@RequestMapping("/flights_List")// 운항정보 리스트 출력
 	public String flights_List(HttpServletRequest request,Model model) {
+		model.addAttribute("request",request);
 		command=new Flights_List_Command();
 		command.execute(sqlSession,model);
 		return "flights_List/flights_List";
@@ -149,6 +164,7 @@ public class UserController {
 	
 	@RequestMapping("/flights_passengers")// 운항정보 리스트 출력
 	public String flights_passengers(HttpServletRequest request,Model model) {
+		model.addAttribute("request",request);
 		command=new Flights_Passengers_Command();
 		command.execute(sqlSession,model);
 		return "flights_List/flights_Passengers";
