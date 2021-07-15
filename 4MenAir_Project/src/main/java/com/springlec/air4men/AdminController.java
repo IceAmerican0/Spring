@@ -35,8 +35,8 @@ public class AdminController {
 	@RequestMapping("/Admin_Login")// 로그인 화면
 	public String Admin_Login(HttpServletRequest request,Model model) {
 		model.addAttribute("request",request);
-		command=new AdminLoginCommand();
-		command.execute(sqlSession,model);
+//		command=new AdminLoginCommand();
+//		command.execute(sqlSession,model);
 		return "Admin_Login";
 	}
 	

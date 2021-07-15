@@ -18,7 +18,7 @@
             <ul class="container navbar-nav">
                 <li class="nav-item"><a class="nav-link" href="main_view?userId=${param.userId }">예약</a></li>
                 <li class="nav-item"><a class="nav-link" href="userReservationList_view?userId=${param.userId }">나의 예약</a></li>
-                <li class="nav-item"><a class="nav-link" href="Notice_List?userId=${param.userId }">공자 사항</a></li>
+                <li class="nav-item"><a class="nav-link" href="Notice_List?userId=${param.userId }">공지 사항</a></li>
                 <li class="nav-item"><a class="nav-link" href="userQnaList_view?userId=${param.userId }">Q & A</a></li>
             </ul>
         </div>

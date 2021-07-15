@@ -162,7 +162,7 @@ public class UserController {
 		return "flights_List/flights_List";
 	}
 	
-	@RequestMapping("/flights_passengers")// 운항정보 리스트 출력
+	@RequestMapping("/flights_passengers")// 운항 세부정보 
 	public String flights_passengers(HttpServletRequest request,Model model) {
 		model.addAttribute("request",request);
 		command=new Flights_Passengers_Command();

@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 import com.springlec.air4men.dto.Flights_List_Dto;
 
-public interface Flights_List_dao {
+public interface FlightsListDao {
 	
 	public ArrayList<Flights_List_Dto> Flights_List(String date_value);
 	

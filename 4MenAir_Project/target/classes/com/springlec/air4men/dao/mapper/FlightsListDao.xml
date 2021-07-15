@@ -5,7 +5,7 @@
 
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
     
-    <mapper namespace="com.springlec.air4men.dao.Flights_List_Dao">
+    <mapper namespace="com.springlec.air4men.dao.FlightsListDao">
     	
     	<select id="Flights_List" resultType="com.springlec.air4men.dto.Flights_List_Dto">
     		SELECT distinct DATE_FORMAT(Departures_Date,'%m월 %d일') AS SELECT_DATE , DATE_FORMAT(Departures_Date, '%Y-%m-%d') AS SEARCH_DATE

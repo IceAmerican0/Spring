@@ -38,7 +38,7 @@
 <body>
 	<div class="container">
 		<h3>관리자 로그인</h3>
-		<form name="LoginInfo" method="post" action="Admin_LoginChk.jsp" 
+		<form name="LoginInfo" method="get" action="Admin_LoginChk" 
                 onsubmit="return valid_check()">
 			<div class="form-group" >
 				<label for="adminId">아이디 : </label>

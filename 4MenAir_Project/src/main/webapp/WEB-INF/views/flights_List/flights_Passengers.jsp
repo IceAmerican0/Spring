@@ -12,7 +12,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>고객 정보</title>
 </head>
 <body>
     <%@ include file="flights_top.jsp"%>
@@ -82,39 +82,39 @@
                 <div class="middleTitle">운항 정보</div>
                 <div class="form-group">
                     <label for="userId">항공편 코드 </label>
-                    <input type="text" name="select_flights_Code" class="form-control" value="${flights_passengers.select_flights_Code }" readonly="readonly">
+                    <input type="text" name="select_flights_Code" class="form-control" value="${flights_passengers.flights_Code }" readonly="readonly">
                 </div>
                 <div class="form-group">
                     <label for="userId">출발지 </label>
-                    <input type="text" name="select_departures" class="form-control" value="${flights_passengers.select_departures } " readonly="readonly">
+                    <input type="text" name="select_departures" class="form-control" value="${flights_passengers.departures } " readonly="readonly">
                 </div>
                 <div class="form-group">
                     <label for="userId">출발일 </label>
-                    <input type="text" name="select_departures_Date" class="form-control" value="${flights_passengers.select_departures_Date }" readonly="readonly">
+                    <input type="text" name="select_departures_Date" class="form-control" value="${flights_passengers.departures_Date }" readonly="readonly">
                 </div>
                 <div class="form-group">
                     <label for="userId">출발시간 </label>
-                    <input type="text" name="select_departures_Time" class="form-control" value="${flights_passengers.select_departures_Time }" readonly="readonly">
+                    <input type="text" name="select_departures_Time" class="form-control" value="${flights_passengers.departures_Time }" readonly="readonly">
                 </div>
                 <div class="form-group">
                     <label for="userId">도착지 </label>
-                    <input type="text" name="select_arrivals" class="form-control" value="${flights_passengers.select_arrivals }" readonly="readonly">
+                    <input type="text" name="select_arrivals" class="form-control" value="${flights_passengers.arrivals }" readonly="readonly">
                 </div>
                 <div class="form-group">
                     <label for="userId">도착일 </label>
-                    <input type="text" name="select_arrivals_Date" class="form-control" value="${flights_passengers.select_arrivals_Date } " readonly="readonly">
+                    <input type="text" name="select_arrivals_Date" class="form-control" value="${flights_passengers.arrivals_Date } " readonly="readonly">
                 </div>
                 <div class="form-group">
                     <label for="userId">도착시간 </label>
-                    <input type="text" name="select_arrivals_Time" class="form-control" value="${flights_passengers.select_arrivals_Time } " readonly="readonly">
+                    <input type="text" name="select_arrivals_Time" class="form-control" value="${flights_passengers.arrivals_Time } " readonly="readonly">
                 </div>
                 <div class="form-group">
                     <label for="userId">탑승가능인원 </label>
-                    <input type="text" name="select_passengers" class="form-control" value="${flights_passengers.select_passengers }" readonly="readonly">
+                    <input type="text" name="select_passengers" class="form-control" value="${flights_passengers.passengers }" readonly="readonly">
                 </div>
                 <div class="form-group">
                     <label for="userId">운임비 </label>
-                    <input type="text" name="select_payments" class="form-control" value="${flights_passengers.select_payments }" readonly="readonly">
+                    <input type="text" name="select_payments" class="form-control" value="${flights_passengers.payments }" readonly="readonly">
                 </div>
             </div>
             <div id="demo" class="collapse">
@@ -200,7 +200,7 @@
                 </div>
                 <form action="userPayment_view" method="post">
                     <input type="hidden" name="userId" value="${param.userId}">
-                    <input type="hidden" name="flight" value="${flights_passengers.select_flights_Code }">
+                    <input type="hidden" name="flight" value="${flights_passengers.flights_Code }">
                     <input type="submit" value="결제하기">
                 </form>
             </div>

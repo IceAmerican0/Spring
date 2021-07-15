@@ -16,7 +16,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-<title>제발좀</title>
+<title>운항 정보</title>
 </head>
 <body>
     <%@ include file="flights_top.jsp" %>
@@ -65,7 +65,7 @@
                 <div class="container">
                     <input type="hidden" name="userId" value="${param.userId }">
                     <input type="hidden" name="date_value" value="${param.date_value}">
-                    <c:forEach items="${flights_List}" var="flights_List_dto" varStatus="flights_count">
+                    <c:forEach items="${flights_List2}" var="flights_List_dto" varStatus="flights_count">
                         <c:if test="${not empty flights_List_dto.departures}">
                             <c:if test="${param.from eq flights_List_dto.departures}">
                                 <label class="row flite_schedule_lable">

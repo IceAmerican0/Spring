@@ -11,7 +11,7 @@ import org.springframework.ui.Model;
 
 import com.springlec.air4men.command.BCommand;
 import com.springlec.air4men.dao.AdminNoticeDao;
-import com.springlec.air4men.dao.Flights_List_dao;
+import com.springlec.air4men.dao.FlightsListDao;
 import com.springlec.air4men.dto.Flights_List_Dto;
 import com.springlec.air4men.dto.UserDto;
 
@@ -29,8 +29,10 @@ public class Flights_List_Command implements BCommand {
 		
 		if(("".equals(request.getParameter("date_value")))) date_value=request.getParameter("date_value"); // 날짜 변경했을시 날짜값 변경해주는 작업
 		
-		Flights_List_dao dao=sqlSession.getMapper(Flights_List_dao.class);
+		FlightsListDao dao=sqlSession.getMapper(FlightsListDao.class);
 		ArrayList<Flights_List_Dto> arrayList = dao.Flights_List(date_value);
+		ArrayList<Flights_List_Dto> arrayList2 = dao.Flights_List2(date_value);
 		model.addAttribute("flights_List", arrayList);
+		model.addAttribute("flights_List2", arrayList2);
 	}
 }
